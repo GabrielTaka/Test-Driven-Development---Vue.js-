@@ -1,8 +1,8 @@
 {
-  "name": "test_driven_development_vue.js",
+  "name": "login",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "Gabriel Frederico Takahashi Vargas <gabriel.vargas01@fatec.sp.gov.br>",
+  "author": "Fabio Vedovelli <vedovelli@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "vue": "^2.5.11",
+    "vue-cli": "^2.9.6",
     "vuelidate": "^0.6.1"
   },
   "browserslist": [
@@ -20,34 +21,34 @@
     "not ie <= 8"
   ],
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^6.26.0",
-    "babel-jest": "^24.8.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
-    "jest": "^24.8.0",
-    "vue-jest": "^3.0.4",
+    "jest": "^22.4.2",
+    "vue-jest": "^2.1.0",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },
   "jest": {
+    "testURL": "http://localhost/",
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
     "moduleFileExtensions": [
       "js",
       "json",
       "vue"
     ],
     "transform": {
-      ".*\\.(vue)$": "vue-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
-    },
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
     }
   }
 }
