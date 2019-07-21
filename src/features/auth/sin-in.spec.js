@@ -30,8 +30,34 @@ describe('SignIn', () => {
     expect(wrapper.vm.$v.$invalid).toBeFalsy()
   })
 
+  test(' As propriedades corretas estão presentes no estado do componente', () => {
+    const expected = ['username', 'password', 'keepSignedIn' ]
+    const recived = Object.keys(wrapper.vm.$data)
+    expect(expected).toEqual(recived)
+  })
+
+  test( 'O evento do-sign-in é disparado quando vm.submit() é executado', () => {
+    setData(wrapper)
+    wrapper.vm.submit()
+    const data = wrapper.emitted('do-sign-in') [0] [0]
+    expect(data).toEqual({
+      username: 'Gabriel',
+      password: '12345',
+      keepSignedIn: true
+    })
+  })
+
   test('é uma instância do Vue', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
+  const setData = wrapper => wrapper.setData({
+    username: 'Gabriel',
+    password: '12345'
+  })
+
+  const resetData = wrapper => wrapper.setData({
+    username: 'Gabriel',
+    password: '12345'
+  })
 })
