@@ -1,6 +1,6 @@
-# login
+# About
 
-> A Vue.js project
+> A Vue.js project using Jest to test.
 
 ## Build Setup
 
